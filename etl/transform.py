@@ -17,6 +17,10 @@ def transform_sim_79(dados):
     dados['filhmort'] = dados['filhmort'].replace('XX', 0)
     dados['filhvivos'] = dados['filhvivos'].replace('XX', 0)
 
+def transform_sim_85(dados):
+    dados['filhvivos'] = dados['filhvivos'].replace(0, str(0))
+    dados['filhvivos'] = dados['filhvivos'].astype('Int64')
+
 def transform_sim_86(dados):
     dados['filhvivos'] = dados['filhvivos'].astype('Int64')
 

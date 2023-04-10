@@ -10,19 +10,26 @@ def etl_sim_79(ano):
     T.transform_sim_79(dados)
     L.load_sim(dados, tabela='tb_sim_79')
 
+def etl_sim_85(ano):
+    dados = E.extract_sim(str(ano))
+    dados['ano'] = ano
+    T.transform_sim_79(dados)
+    T.transform_sim_85(dados)
+    L.load_sim(dados, 'tb_sim_79')
+
 def etl_sim_86(ano):
     dados = E.extract_sim(str(ano))
     dados['ano'] = ano
     T.transform_sim_79(dados)
     T.transform_sim_86(dados)
-    L.load_sim(dados, 'dados')
+    L.load_sim(dados, 'tb_sim_79')
 
 def etl_sim_87(ano):
     dados = E.extract_sim(str(ano))
     dados['ano'] = ano
     T.transform_sim_79(dados)
     T.transform_sim_87(dados)
-    L.load_sim(dados, 'dados')
+    L.load_sim(dados, 'tb_sim_79')
 
 def etl_sim_90(ano):
     dados = E.extract_sim(str(ano))
@@ -30,7 +37,7 @@ def etl_sim_90(ano):
     T.transform_sim_79(dados)
     T.transform_sim_87(dados)
     T.transform_sim_90(dados)
-    L.load_sim(dados, 'dados')
+    L.load_sim(dados, 'tb_sim_79')
 
 def etl_sim_91(ano):
     dados = E.extract_sim(str(ano))
@@ -39,7 +46,7 @@ def etl_sim_91(ano):
     T.transform_sim_87(dados)
     T.transform_sim_90(dados)
     T.transform_sim_91(dados)
-    L.load_sim(dados, 'dados')
+    L.load_sim(dados, 'tb_sim_79')
 
 def etl_sim_92(ano):
     dados = E.extract_sim(str(ano))
@@ -49,7 +56,7 @@ def etl_sim_92(ano):
     T.transform_sim_87(dados)
     T.transform_sim_90(dados)
     T.transform_sim_91(dados)
-    L.load_sim(dados, 'dados')
+    L.load_sim(dados, 'tb_sim_79')
 
 
 def etl_sim_95(ano):
@@ -62,7 +69,7 @@ def etl_sim_95(ano):
     T.transform_sim_91(dados)
     T.transform_sim_95(dados)
 
-    L.load_sim(dados, 'dados')
+    L.load_sim(dados, 'tb_sim_79')
 
 def etl_sim_96(ano):
     dados = E.extract_sim_96(str(ano))
@@ -78,4 +85,4 @@ def etl_sim_96(ano):
     dados.rename(columns={'dtobito':'dataobito', 'dtnasc':'datanasc'}, inplace=True)
     dados.drop(columns=['contador', 'natural'], inplace=True)
 
-    L.load_sim(dados, 'dados')
+    L.load_sim(dados, 'tb_sim_79')
