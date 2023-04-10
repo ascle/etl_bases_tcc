@@ -14,12 +14,13 @@ def executar_etl_sim_85_92():
     etl.etl_sim_91(1991)
     etl.etl_sim_92(1992)
 
+
 if __name__ == '__main__':
     executar_etl_sim_79_84()
     executar_etl_sim_85_92()
+    #etl.etl_sim_92(1993) # Erro!!!
+    etl.etl_sim_92(1994)
+    etl.etl_sim_95(1995)
 
-    #etl.etl_sim_92(1993) #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    #etl.etl_sim_92(1994)
-    #etl.etl_sim_95(1995)
     #etl.etl_sim_96(1996)
 
