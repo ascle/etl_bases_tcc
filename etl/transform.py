@@ -1,10 +1,9 @@
 
 def transform_sim_79(dados):
-    dados.drop(columns=['CONTADOR', 'CODIGO', 'AREARES', 'NATURAL', 'OBITOFE1',
-                        'OBITOFE2', 'FONTINFO', 'NUMEXPORT', 'CRSOCOR', 'CRSRES',
-                        'MUNIRES'], inplace=True)
+    dados.drop(columns=['contador', 'codigo', 'areares', 'natural', 'obitofe1',
+                        'obitofe2', 'fontinfo', 'numexport', 'crsocor', 'crsres',
+                        'munires'], inplace=True)
 
-    dados.rename(columns=str.lower, inplace=True)
     dados['ocuppai'] = dados['ocuppai'].replace('.', None)
     dados['ocuppai'] = dados['ocuppai'].astype('Int64')
     dados['instrpai'] = dados['instrpai'].astype('Int64')
@@ -50,32 +49,32 @@ def transform_sim_91(dados):
 
 
 def transform_sim_92(dados):
-    dados['OCUPMAE'] = dados['OCUPMAE'].replace('0.0', str(0))
-    dados['OCUPMAE'] = dados['OCUPMAE'].replace('0 0', str(0))
-    dados['OCUPMAE'] = dados['OCUPMAE'].replace('x80', None)
-    dados['OCUPPAI'] = dados['OCUPPAI'].replace(0.0, None)
-    dados['OCUPPAI'] = dados['OCUPPAI'].replace('0.0', None)
-    dados['OCUPPAI'] = dados['OCUPPAI'].replace('X80', None)
-    dados['IDADEMAE'] = dados['IDADEMAE'].replace('0.', str(0))
-    dados['IDADEMAE'] = dados['IDADEMAE'].replace('.', None)
-    dados['IDADEMAE'] = dados['IDADEMAE'].replace('..', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('+', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('+++', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('.', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('00.', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('.0.', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('.0', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace(.0, None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('0.0', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('x90', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('x20', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('x60', None)
-    dados['OCUPACAO'] = dados['OCUPACAO'].replace('x70', None)
-    dados['FILHVIVOS'] = dados['FILHVIVOS'].replace('0.', str(0))
-    dados['FILHVIVOS'] = dados['FILHVIVOS'].replace(0., None)
-    dados['PESONASC'] = dados['PESONASC'].replace('0 00', None)
-    dados['REGISTRO'] = dados['REGISTRO'].replace('00)740', None)
-    dados['REGISTRO'] = dados['REGISTRO'].replace('0#7535', None)
+    dados['ocupmae'] = dados['ocupmae'].replace('0.0', str(0))
+    dados['ocupmae'] = dados['ocupmae'].replace('0 0', str(0))
+    dados['ocupmae'] = dados['ocupmae'].replace('x80', None)
+    dados['ocuppai'] = dados['ocuppai'].replace(0.0, None)
+    dados['ocuppai'] = dados['ocuppai'].replace('0.0', None)
+    dados['ocuppai'] = dados['ocuppai'].replace('X80', None)
+    dados['idademae'] = dados['idademae'].replace('0.', str(0))
+    dados['idademae'] = dados['idademae'].replace('.', None)
+    dados['idademae'] = dados['idademae'].replace('..', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('+', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('+++', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('.', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('00.', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('.0.', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('.0', None)
+    dados['ocupacao'] = dados['ocupacao'].replace(.0, None)
+    dados['ocupacao'] = dados['ocupacao'].replace('0.0', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('x90', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('x20', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('x60', None)
+    dados['ocupacao'] = dados['ocupacao'].replace('x70', None)
+    dados['filhvivos'] = dados['filhvivos'].replace('0.', str(0))
+    dados['filhvivos'] = dados['filhvivos'].replace(0., None)
+    dados['pesonasc'] = dados['pesonasc'].replace('0 00', None)
+    dados['registro'] = dados['registro'].replace('00)740', None)
+    dados['registro'] = dados['registro'].replace('0#7535', None)
 
 
 def transform_sim_95(dados):
