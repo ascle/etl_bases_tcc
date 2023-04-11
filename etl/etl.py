@@ -84,16 +84,6 @@ def etl_sim_96(ano):
     dados = E.extract_sim_96(str(ano))
     dados.rename(columns=str.lower, inplace=True)
     dados['ano'] = ano
-    print(dados.columns)
-    #T.transform_sim_92(dados)
-    #T.transform_sim_79(dados)
-    #T.transform_sim_87(dados)
-    #T.transform_sim_90(dados)
-    T.transform_sim_91(dados)
-    T.transform_sim_95(dados)
-
-    #dados.rename(columns=str.lower, inplace=True)
-    #dados.rename(columns={'dtobito':'dataobito', 'dtnasc':'datanasc'}, inplace=True)
-    #dados.drop(columns=['contador', 'natural'], inplace=True)
-
+    T.transform_sim_96(dados)
+    T.convert_float64_to_Int64(dados)
     L.load_sim(dados, 'tb_sim_95')

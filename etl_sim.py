@@ -21,6 +21,5 @@ if __name__ == '__main__':
     #etl.etl_sim_92(1993) # Erro!!!
     etl.etl_sim_92(1994)
     etl.etl_sim_95(1995)
-
-    #etl.etl_sim_96(1996)
+    etl.etl_sim_96(1996)
 
