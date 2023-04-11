@@ -1,5 +1,4 @@
-import extract as E
-import load as L
+from etl import extract as E, load as L
 
 if __name__ == '__main__':
     dados_ocupacao = E.extract_cbo2002()

@@ -1,5 +1,5 @@
-import extract as E
-import load as L
+from etl import extract as E, load as L
+
 
 def etl_uf():
     df_ibge = E.extract_ibge_municipio()

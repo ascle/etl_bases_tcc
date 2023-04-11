@@ -1,7 +1,4 @@
-import numpy as np
-
-import extract as E
-import load as L
+from etl import extract as E
 import transform_lkg_marco as dic
 
 def print_coluna_valores(dados):
