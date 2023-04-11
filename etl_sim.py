@@ -1,8 +1,10 @@
 from etl import etl
 
+
 def executar_etl_sim_79_84():
     for ano in range(1979, 1984 + 1):
         etl.etl_sim_79(ano)
+
 
 def executar_etl_sim_85_92():
     etl.etl_sim_85(1985)
@@ -18,8 +20,7 @@ def executar_etl_sim_85_92():
 if __name__ == '__main__':
     executar_etl_sim_79_84()
     executar_etl_sim_85_92()
-    #etl.etl_sim_92(1993) # Erro!!!
+    # etl.etl_sim_92(1993) # Erro!!!
     etl.etl_sim_92(1994)
     etl.etl_sim_95(1995)
     etl.etl_sim_96(1996)
-
