@@ -1,0 +1,224 @@
+CREATE SCHEMA lkg_marco;
+
+
+-- DROP TABLE tb_linkage;
+CREATE TABLE tb_linkage(
+	SEM_NOME INTEGER,
+	OBT_NEONATAL BOOLEAN,
+	IDADEMAE INTEGER,
+	IDADEPAI INTEGER,
+	qtdfilvivo DOUBLE PRECISION,
+	QTDFILMORT DOUBLE PRECISION,
+	QTDGESTANT INTEGER,
+	QTDPARTNOR INTEGER,
+	QTDPARTCES INTEGER,
+	CONSPRENAT INTEGER,
+	APGAR1 INTEGER,
+	APGAR5 INTEGER,
+	PESO DOUBLE PRECISION,
+	SEMAGESTAC INTEGER,
+	IDADE_OBT INTEGER,
+	LOCNASC INTEGER,
+	ESTCIVMAE INTEGER,
+	ESCMAE INTEGER,
+	GESTACAO INTEGER,
+	GRAVIDEZ INTEGER,
+	PARTO INTEGER,
+	CONSULTAS INTEGER,
+	SEXO INTEGER,
+	IDANOMAL INTEGER,
+	ESCMAE2010 INTEGER,
+	SERIESCMAE INTEGER,
+	RACACORMAE INTEGER,
+	TPMETESTIM INTEGER,
+	TPAPRESENT INTEGER,
+	STTRABPART INTEGER,
+	STCESPARTO INTEGER,
+	TPNASCASSI INTEGER,
+	TPFUNCRESP INTEGER,
+	TPDOCRESP INTEGER,
+	ESCMAEAGR1 INTEGER,
+	STDNNOVA BOOLEAN,
+	CODANOMAL VARCHAR(30),
+	ANO INTEGER
+);
+
+
+-- DROP TABLE lkg_marco.CONSULTAS;
+CREATE TABLE lkg_marco.CONSULTAS(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (10) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_CONSULTAS
+	FOREIGN KEY(consultas) REFERENCES lkg_marco.consultas(id);
+
+
+-- DROP TABLE lkg_marco.ESCMAE;
+CREATE TABLE lkg_marco.ESCMAE(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (20) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_escmae
+	FOREIGN KEY(escmae) REFERENCES lkg_marco.escmae(id);
+
+
+-- DROP TABLE lkg_marco.ESCMAE2010;
+CREATE TABLE lkg_marco.ESCMAE2010(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (30) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_escmae2010
+	FOREIGN KEY(escmae2010) REFERENCES lkg_marco.escmae2010(id);
+
+
+-- DROP TABLE lkg_marco.ESCMAEAGR1;
+CREATE TABLE lkg_marco.ESCMAEAGR1(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (50) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_escmaeagr1
+	FOREIGN KEY(escmaeagr1) REFERENCES lkg_marco.escmaeagr1(id);
+
+
+-- DROP TABLE lkg_marco.ESTCIVMAE;
+CREATE TABLE lkg_marco.ESTCIVMAE(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (40) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_estcivmae
+	FOREIGN KEY(estcivmae) REFERENCES lkg_marco.estcivmae(id);
+
+
+-- DROP TABLE lkg_marco.GESTACAO;
+CREATE TABLE lkg_marco.GESTACAO(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (20) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_gestacao
+	FOREIGN KEY(gestacao) REFERENCES lkg_marco.gestacao(id);
+
+
+-- DROP TABLE lkg_marco.GRAVIDEZ;
+CREATE TABLE lkg_marco.GRAVIDEZ(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (20) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_gravidez
+	FOREIGN KEY(gravidez) REFERENCES lkg_marco.gravidez(id);
+
+
+-- DROP TABLE lkg_marco.IDANOMAL;
+CREATE TABLE lkg_marco.IDANOMAL(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (10) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_idanomal
+	FOREIGN KEY(idanomal) REFERENCES lkg_marco.idanomal(id);
+
+
+-- DROP TABLE lkg_marco.LOCNASC;
+CREATE TABLE lkg_marco.LOCNASC(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (20) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_locnasc
+	FOREIGN KEY(locnasc) REFERENCES lkg_marco.locnasc(id);
+
+
+-- DROP TABLE lkg_marco.PARTO;
+CREATE TABLE lkg_marco.PARTO(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (10) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_parto
+	FOREIGN KEY(parto) REFERENCES lkg_marco.parto(id);
+
+
+-- DROP TABLE lkg_marco.SEXO;
+CREATE TABLE lkg_marco.SEXO(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (10) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_sexo
+	FOREIGN KEY(sexo) REFERENCES lkg_marco.sexo(id);
+
+
+-- DROP TABLE lkg_marco.STCESPARTO;
+CREATE TABLE lkg_marco.STCESPARTO(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (20) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_stcesparto
+	FOREIGN KEY(stcesparto) REFERENCES lkg_marco.stcesparto(id);
+
+
+-- DROP TABLE lkg_marco.STTRABPART;
+CREATE TABLE lkg_marco.STTRABPART(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (10) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_sttrabpart
+	FOREIGN KEY(sttrabpart) REFERENCES lkg_marco.sttrabpart(id);
+
+
+-- DROP TABLE lkg_marco.TPAPRESENT;
+CREATE TABLE lkg_marco.TPAPRESENT(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (20) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_tpapresent
+	FOREIGN KEY(tpapresent) REFERENCES lkg_marco.tpapresent(id);
+
+
+-- DROP TABLE lkg_marco.TPDOCRESP;
+CREATE TABLE lkg_marco.TPDOCRESP(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (10) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_tpdocresp
+	FOREIGN KEY(tpdocresp) REFERENCES lkg_marco.tpdocresp(id);
+
+
+-- DROP TABLE lkg_marco.TPFUNCRESP;
+CREATE TABLE lkg_marco.TPFUNCRESP(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (30) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_tpfuncresp
+	FOREIGN KEY(tpfuncresp) REFERENCES lkg_marco.tpfuncresp(id);
+
+
+-- DROP TABLE lkg_marco.TPMETESTIM;
+CREATE TABLE lkg_marco.TPMETESTIM(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (20) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_tpmetestim
+	FOREIGN KEY(tpmetestim) REFERENCES lkg_marco.tpmetestim(id);
+
+
+-- DROP TABLE lkg_marco.TPNASCASSI;
+CREATE TABLE lkg_marco.TPNASCASSI(
+    id INTEGER PRIMARY KEY,
+    cv_descricao VARCHAR (30) NOT NULL
+);
+ALTER TABLE tb_linkage
+	ADD CONSTRAINT FK_tpnascassi
+	FOREIGN KEY(tpnascassi) REFERENCES lkg_marco.tpnascassi(id);
