@@ -1,4 +1,4 @@
-from etl import etl
+from etl import etl_linkage as etl
 
 def print_coluna_valores(dados):
     for column in dados:
@@ -7,8 +7,9 @@ def print_coluna_valores(dados):
 
 
 if __name__ == '__main__':
-    etl.etl_linkage()
-    #dados.info()
+    #etl.etl_linkage_cru_to_DB()
+    etl.etl_linkage_limpeza()
+
 
 
 

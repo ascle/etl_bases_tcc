@@ -1,4 +1,4 @@
-from etl import etl
+from etl import etl_sim as etl
 
 
 def executar_etl_sim_79_84():

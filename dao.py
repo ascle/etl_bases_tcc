@@ -75,3 +75,6 @@ def executeScriptsFromFile(filename):
                 print('Erro: ')
                 print(errorMsg)
                 conn.rollback()
+
+def salvar_csv(dados, name_file):
+    dados.to_csv(name_file, sep=';', index=False)

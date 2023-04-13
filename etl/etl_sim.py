@@ -1,5 +1,5 @@
 from . import extract as E
-from . import transform as T
+from . import transform_sim as T
 from . import load as L
 import dao
 
@@ -95,13 +95,3 @@ def etl_sim_96(ano):
     T.convert_float64_to_Int64(dados)
     T.transform_sim_96(dados)
     L.load_sim(dados, 'tb_sim_95')
-
-
-def etl_linkage():
-    dao.executeScriptsFromFile('sql/ddl_linkage.sql')
-    dao.executeScriptsFromFile('sql/dml_linkage.sql')
-    dados = E.extract_linkage_marco()
-    dados.rename(columns=str.lower, inplace=True)
-    T.transform_linkage(dados)
-    T.convert_float64_to_Int64(dados)
-    L.load(dados, "tb_linkage")
